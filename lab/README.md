@@ -1,11 +1,8 @@
-# Lab file
+# Lab files
 
-`Router_Redistribution_before_configuring.pkt` is the **starting** Packet Tracer file, saved before redistribution was configured.
+| File | State |
+|---|---|
+| `Router_Redistribution_before_configuring.pkt` | Starting point: addressing and each domain's own protocol, redistribution not yet applied |
+| `Router_Redistribution_final.pkt` | Finished lab with redistribution and default routes applied |
 
-To reproduce the lab:
-
-1. Open the file in Cisco Packet Tracer.
-2. On `ISP-router`, apply the redistribution and default-route commands from [`../configs/ISP-router.cfg`](../configs/ISP-router.cfg).
-3. Wait about a minute for routes to propagate, then run the checks in [`../verification/commands.md`](../verification/commands.md).
-
-A finished `.pkt` (after configuring) is not included yet. Save one as `Router_Redistribution_final.pkt` and add it here.
+To rebuild the finished lab from the starting file, apply the commands in [`../configs/ISP-router.cfg`](../configs/ISP-router.cfg) on `ISP-router`, wait about a minute for routes to propagate, then run the checks in [`../verification/commands.md`](../verification/commands.md).

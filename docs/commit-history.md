@@ -27,6 +27,6 @@ git commit -m "Add verification commands and lab folder"
 git add README.md docs/
 git commit -m "Add README and documentation"
 
-git remote add origin https://github.com/mushfiq11235/router-redistribution-lab.git
+git remote add origin https://github.com/mushfiq11235/Enterprise-Route-Redistribution-Design.git
 git push -u origin main
 ```
