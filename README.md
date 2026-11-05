@@ -9,6 +9,12 @@ A Cisco Packet Tracer lab in which three LAN domains, each running a **different
 
 > **Scope:** This is a student lab built in a simulator. It is not a production design and I make no claim of enterprise experience. Route redistribution is generally taught beyond the CCNA level, so this lab is an extension of my CCNA practice.
 
+## Quick Summary
+
+**Route Redistribution lab (Cisco Packet Tracer).** A self-directed, CCNA-extension project. I built an eight-router network with three separate routing domains (RIP, EIGRP and OSPF) plus a simulated internet gateway. The domains could not reach each other, so I configured one router to redistribute routes in all six directions with the right seed metric for each protocol, and propagated a static default route into every domain. I verified the result with routing tables (`R`, `O E2`, `D EX`, and the `R*`, `O*E2`, `D*EX` defaults), the OSPF external database, and end-to-end pings and a traceroute between every LAN and the internet. I also documented the troubleshooting steps, how specific redistributed routes win over the default route by longest-prefix match, and the lab's limitations.
+
+*Relevant for:* entry-level network engineer, NOC and infrastructure support roles. More variants (GitHub description, LinkedIn text, resume bullets, interview talking points) are in [`docs/portfolio-description.md`](docs/portfolio-description.md).
+
 ---
 
 ## Table of Contents
@@ -27,7 +33,7 @@ A Cisco Packet Tracer lab in which three LAN domains, each running a **different
 12. [Limitations and Future Improvements](#12-limitations-and-future-improvements)
 13. [Repository Structure](#13-repository-structure)
 14. [How to Open the Lab](#14-how-to-open-the-lab)
-15. [Status and Evidence Still to Add](#15-status-and-evidence-still-to-add)
+15. [Status and Optional Extras](#15-status-and-optional-extras)
 
 ---
 
@@ -355,7 +361,6 @@ TTL 123 means the packet crossed five routers (128 − 5).
 
 | From | To | Result | Evidence |
 |---|---|---|---|
-| 192.168.10.2 (RIP LAN) | 192.168.12.2 (ISP interface) | Reachable before redistribution | Screenshot noted in [section 15](#15-status-and-evidence-still-to-add) |
 | 192.168.10.2 (RIP LAN) | 192.168.30.2 (OSPF LAN) | While redistribution was being added: 4 timeouts, then replies, TTL 123 | [`02-rip-into-ospf-ping-30.2.png`](docs/images/screenshots/02-rip-into-ospf-ping-30.2.png) |
 | 192.168.10.2 (RIP LAN) | 192.168.20.2 (EIGRP LAN) | While redistribution was being added: 5 timeouts, then replies, TTL 123 | [`04-eigrp-metric-and-ping-20.2.png`](docs/images/screenshots/04-eigrp-metric-and-ping-20.2.png) |
 | 192.168.10.2 (RIP LAN) | 192.168.30.2, 192.168.20.2, 200.20.20.2 | Final state: 4/4 replies each, 0% loss, TTL 123 / 123 / 124 | [`06-rip-lan-pings-...png`](docs/images/screenshots/06-rip-lan-pings-200.20.20.2-20.2-30.2.png) |
@@ -458,7 +463,6 @@ See [`verification/commands.md`](verification/commands.md).
 - [ ] **Set explicit router IDs** on all routers.
 - [ ] **Add passive interfaces** on PC-facing LANs.
 - [ ] **Add authentication** for each protocol.
-- [ ] **Capture an end-to-end test** from every LAN to every other LAN and to `200.20.20.2`.
 - [ ] **Basic device hardening:** passwords, `enable secret`, SSH instead of `login` on the VTY lines.
 
 ---
@@ -516,7 +520,7 @@ router-redistribution-lab/
 
 ---
 
-## 15. Status and Evidence Still to Add
+## 15. Status and Optional Extras
 
 This repository documents the lab from captured configs, routing tables and screenshots. Not included, and not needed to understand the lab:
 
