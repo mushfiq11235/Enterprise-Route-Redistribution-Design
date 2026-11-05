@@ -8,11 +8,6 @@
 A Cisco Packet Tracer lab in which three LAN domains, each running a **different routing protocol** (RIP, EIGRP, OSPF), cannot reach each other until a single router that runs all three protocols (the "ISP router") **redistributes routes between them**. The lab also adds a **static default route** to a simulated internet gateway and propagates it into every protocol.
 
 > **Scope:** This is a student lab built in a simulator. It is not a production design and I make no claim of enterprise experience. Route redistribution is generally taught beyond the CCNA level, so this lab is an extension of my CCNA practice.
-
-## Project Overview
-
-**Route Redistribution lab (Cisco Packet Tracer).** A self-directed, CCNA-extension project. I built an eight-router network with three separate routing domains (RIP, EIGRP and OSPF) plus a simulated internet gateway. The domains could not reach each other, so I configured one router to redistribute routes in all six directions with the right seed metric for each protocol, and propagated a static default route into every domain. I verified the result with routing tables (`R`, `O E2`, `D EX`, and the `R*`, `O*E2`, `D*EX` defaults), the OSPF external database, and end-to-end pings and a traceroute between every LAN and the internet. I also documented the troubleshooting steps, how specific redistributed routes win over the default route by longest-prefix match, and the lab's limitations.
-
 ---
 
 ## Table of Contents
