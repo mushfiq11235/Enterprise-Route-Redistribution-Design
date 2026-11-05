@@ -1,0 +1,27 @@
+# AFTER redistribution + default routes: EIGRP-Router-2 routing table.
+# Shows RIP and OSPF networks as D EX (AD 170) and the propagated default as D*EX.
+# Source: text copied from the lab notes PDF.
+
+EIGRP-Router-2# sh ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+* - candidate default, U - per-user static route, o - ODR
+P - periodic downloaded static route
+Gateway of last resort is 192.168.22.2 to network 0.0.0.0
+D EX 192.168.10.0/24 [170/2681856] via 192.168.22.2, 00:06:14, Serial0/0/0
+D EX 192.168.11.0/24 [170/2681856] via 192.168.22.2, 00:06:14, Serial0/0/0
+D EX 192.168.12.0/24 [170/2681856] via 192.168.22.2, 00:06:14, Serial0/0/0
+D 192.168.20.0/24 [90/2172416] via 192.168.21.1, 00:06:14, Serial0/0/1
+192.168.21.0/24 is variably subnetted, 2 subnets, 2 masks
+C 192.168.21.0/24 is directly connected, Serial0/0/1
+L 192.168.21.2/32 is directly connected, Serial0/0/1
+192.168.22.0/24 is variably subnetted, 2 subnets, 2 masks
+C 192.168.22.0/24 is directly connected, Serial0/0/0
+L 192.168.22.1/32 is directly connected, Serial0/0/0
+D EX 192.168.30.0/24 [170/2681856] via 192.168.22.2, 00:05:54, Serial0/0/0
+D EX 192.168.31.0/24 [170/2681856] via 192.168.22.2, 00:05:54, Serial0/0/0
+D EX 192.168.32.0/24 [170/2681856] via 192.168.22.2, 00:06:14, Serial0/0/0
+D*EX 0.0.0.0/0 [170/7289856] via 192.168.22.2, 00:06:14, Serial0/0/0

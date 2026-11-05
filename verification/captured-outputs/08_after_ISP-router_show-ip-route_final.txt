@@ -1,0 +1,32 @@
+# AFTER all redistribution and the static default route: the ISP router (the redistribution point) table.
+# Native routes only: redistributed routes appear on the OTHER routers, not on the router that redistributes them.
+# Source: text copied from the lab notes PDF.
+
+ISP-router#sh ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+* - candidate default, U - per-user static route, o - ODR
+P - periodic downloaded static route
+Gateway of last resort is 100.10.10.1 to network 0.0.0.0
+100.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C 100.10.10.0/24 is directly connected, Serial0/0/0
+L 100.10.10.2/32 is directly connected, Serial0/0/0
+R 192.168.10.0/24 [120/2] via 192.168.12.1, 00:00:03, Serial0/0/1
+R 192.168.11.0/24 [120/1] via 192.168.12.1, 00:00:03, Serial0/0/1
+192.168.12.0/24 is variably subnetted, 2 subnets, 2 masks
+C 192.168.12.0/24 is directly connected, Serial0/0/1
+L 192.168.12.2/32 is directly connected, Serial0/0/1
+D 192.168.20.0/24 [90/2684416] via 192.168.22.1, 00:37:44, Serial0/1/0
+D 192.168.21.0/24 [90/2681856] via 192.168.22.1, 00:37:44, Serial0/1/0
+192.168.22.0/24 is variably subnetted, 2 subnets, 2 masks
+C 192.168.22.0/24 is directly connected, Serial0/1/0
+L 192.168.22.2/32 is directly connected, Serial0/1/0
+O 192.168.30.0/24 [110/129] via 192.168.32.1, 00:37:33, Serial0/1/1
+O 192.168.31.0/24 [110/128] via 192.168.32.1, 00:37:33, Serial0/1/1
+192.168.32.0/24 is variably subnetted, 2 subnets, 2 masks
+C 192.168.32.0/24 is directly connected, Serial0/1/1
+L 192.168.32.2/32 is directly connected, Serial0/1/1
+S* 0.0.0.0/0 [1/0] via 100.10.10.1
