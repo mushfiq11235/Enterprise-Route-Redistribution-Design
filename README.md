@@ -499,7 +499,6 @@ router-redistribution-lab/
     │   ├── topology.png
     │   └── screenshots/
     ├── evidence-to-add.md
-    ├── portfolio-description.md
     └── commit-history.md
 ```
 
